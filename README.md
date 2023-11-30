@@ -81,6 +81,7 @@ Script:
     #!/usr/bin/env bash 
     echo "Hola mundo"
 
+
 ![Imagen de darle permisos de ejecucion al archivo y ejecutandolo ](bash/bash.png)
 <hr>
 
@@ -462,8 +463,25 @@ Las bibliotecas dinámicas están vinculadas en tiempo de ejecución.
   Instrucciones en https://github.com/jamj2000/Bibliotecas/blob/master/Build.md 
 <hr>
 
-19. Build. Automatiza el proceso de compilación de ejecutable y biblioteca, su enlazado y la generación del archivo .jar para código fuente en Java con Maven. Haz uso de un buildfile.    
+19. Build. Automatiza el proceso de compilación de ejecutable y biblioteca, su enlazado y la generación del archivo .jar para código fuente en Java con Maven. Haz uso de un buildfile.
 
-  Instrucciones en https://github.com/jamj2000/Bibliotecas/blob/master/Maven.md 
+
+- copilar
+
+![alt](ej18/package.png)
+
+- exec
+
+![alt](ej18/exec.png)
+
+- ejecucion codigo
+
+![alt](ej18/maven.png)
+
+- test
+
+![alt](ej18/mavenTest.png)
+
+  Instrucciones en https://github.com/jamj2000/Bibliotecas/blob/master/
 <hr>
 
