@@ -72,27 +72,177 @@ El intérprete sólo interpreta el código o traduce, pero no nos crea ningún a
 # [Herramientas de desarrollo](#indice) 
 
 1. Ejecuta el programa "Hola mundo" en los siguientes lenguajes:
- 
- - bash
- - python
- - php
- - javascript (nodejs)
- - c
- - c++
- - java
- - ruby
- - go
- - rust
- - lisp
- - ensamblador (nasm)
+ <hr>
 
- Los paquetes a instalar en Ubuntu son: `python`, `php`, `nodejs`, `gcc`, `g++`, `openjdk-8-jdk`, `ruby`, `golang`, `rustc` , `clisp` y `nasm`.
+ - bash:
+    
+Script: 
 
- El código fuente para algunos lenguajes de programación está disponible en:
- https://es.wikipedia.org/wiki/Hola_mundo#Ejemplos
+    #!/usr/bin/env bash 
+    echo "Hola mundo"
 
- Instrucciones en https://github.com/jamj2000/HolaMundo.
+![Imagen de darle permisos de ejecucion al archivo y ejecutandolo ](bash/bash.png)
 <hr>
+
+ - python:
+  
+Script: 
+
+    #!/usr/bin/env python3 
+    print ("Hola mundo")
+
+![Imagen de darle permisos de ejecucion al archivo y ejecutandolo ](python/python.png)
+<hr>
+
+ - php:
+    
+Script: 
+
+    #!/usr/bin/env php
+
+    <?php 
+    echo "Hola mundo\n" 
+    ?>
+
+![Imagen de darle permisos de ejecucion al archivo y ejecutandolo ](php/php.png)
+<hr>
+
+ - javascript (nodejs)
+    
+Script: 
+
+    #!/usr/bin/env node
+
+    console.log('Hola mundo');
+
+![Imagen de darle permisos de ejecucion al archivo y ejecutandolo ](javascript/js.png)
+<hr>
+
+ - c
+    
+Script: 
+
+    #include <stdio.h>
+
+    int main() {
+        printf("¡Hola mundo!");
+        return 0;
+    }
+
+* No entiendo porque no funciona
+  
+![Imagen de darle permisos de ejecucion al archivo y ejecutandolo ](c/c.png)
+<hr>
+
+ - c++
+    
+Script: 
+
+    #include <iostream>
+
+    using namespace std;
+
+    int main()
+    {
+    cout << "¡Hola, mundo!" << endl;
+    return 0;
+    }
+
+![Imagen de darle permisos de ejecucion al archivo y ejecutandolo ](c++/c++.png)
+<hr>
+
+ - java
+    
+Script: 
+
+    class Hola
+    {
+        public static void main(String[] args)
+        {
+            System.out.println("Hola Mundo");
+        }
+    }
+
+![Imagen de darle permisos de ejecucion al archivo y ejecutandolo ](java/java.png)
+<hr>
+
+ - ruby
+    
+Script: 
+
+    #!/usr/bin/env ruby
+
+    puts "Hola Mundo"
+
+![Imagen de darle permisos de ejecucion al archivo y ejecutandolo ](ruby/rb.png)
+<hr>
+
+ - go 
+  
+Script:
+
+        package main
+
+        import "fmt"
+
+        func main() {
+                fmt.Println("Hola mundo desde Go")
+        }
+
+![Imagen de darle permisos de ejecucion al archivo y ejecutandolo ](go/go.png)
+<hr>
+
+ - rust
+
+Script: 
+
+        fn main() {
+            println!("¡Hola, mundo! Desde RUST ");
+        }
+
+![Imagen de darle permisos de ejecucion al archivo y ejecutandolo ](rust/rustc.png)
+<hr>
+
+ - lisp
+ 
+Script: 
+
+    #!/usr/bin/env clisp
+
+    (format t "¡Hola, mundo!")
+
+![Imagen de darle permisos de ejecucion al archivo y ejecutandolo ](lisp/lisp.png)
+<hr>
+
+ - ensamblador (nasm)
+  
+Script: 
+
+    section .data
+    
+    msg     db "¡Hola Mundo!", 0Ah
+    len     equ     $ - msg  
+    
+    section .text
+    
+    global _start
+    
+    _start:
+            mov     eax, 04h
+            mov     ebx, 01h
+            mov     ecx, msg
+            mov     edx, len
+            int     80h
+            mov     eax, 01h
+            mov     ebx, 00h
+            int     80h
+
+
+- No se porque no va 
+
+![Imagen de darle permisos de ejecucion al archivo y ejecutandolo ](ensamblador/emsamblador.png)
+<hr>
+
  <br>
 2. Para cada uno de los lenguajes anteriores, indica el proceso realizado para conseguir ejecutar el código: ¿compilación o interpretación?
    
@@ -143,21 +293,64 @@ El intérprete sólo interpreta el código o traduce, pero no nos crea ningún a
 
 5. Scripts ejecutables para los lenguajes interpretados. Edita los scripts para los siguientes lenguajes:
 
-  - bash
+  - bash:
+
+        #!/bin/bash
+        
+        echo "¡Hola, mundo!"
+
   - python
+
+        print("¡Hola, mundo!")
+
   - php
+
+        <?php
+        echo "¡Hola, mundo!";
+        ?>
+ 
   - javascript
+
+        console.log("¡Hola, mundo!");
+
   - java
+
+        public class HolaMundo {
+            public static void main(String[] args) {
+                System.out.println("¡Hola, mundo!");
+            }
+        }
+
   - ruby
+
+        puts "¡Hola, mundo!"
+ 
   - go
+
+        package main
+
+        import "fmt"
+
+        func main() {
+            fmt.Println("¡Hola, mundo!")
+        }
+
   - rust
+
+        fn main() {
+            println!("¡Hola, mundo!");
+        }
+
   - lisp
+
+        (print "¡Hola, mundo!")
+
 
   Instrucciones en https://github.com/jamj2000/HolaMundo.
 <hr>
 <br>
 
-6. ¿Qué extensión tienen los archivos de código objeto?
+1. ¿Qué extensión tienen los archivos de código objeto?
 
 - Windows:
 
