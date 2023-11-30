@@ -15,31 +15,59 @@
 
 
 # [Introducción](#indice) 
+<br>
+
 1. ¿Para que sirve un compilador? ¿Qué tipo de archivo obtenemos tras compilar?
+
+        Un compilador es un programa que cambia el código que es entendible por los humanos por un código más rápido de entender por las máquinas.
+El tipo de archivo que obtenemos depende del lenguaje con el que estemos programando, por ejemplo si estamos usando java y lo compilamos, obtendremos un .class.
+
 <hr>
+<br>
 
 2. ¿Para que sirve un enlazador? ¿Qué tipo de archivo obtenemos tras enlazar?
+
+        Un enlazador es otro programa que une varios pedazos de código en uno solo, estos pedazos de código surgen de lo que queda tras compilar el código origen.
+Tras enlazar varios pedazos de código obtenemos un fichero ejecutable.
 <hr>
+<br>
 
 3. ¿Para que sirve un interprete? ¿Obtenemos algún archivo tras interpretar?
+
+        Un intérprete sirve para convertir y ejecutar código, que a diferencia de un compilador el intérprete ejecuta el código directamente.
+El intérprete sólo interpreta el código o traduce, pero no nos crea ningún archivo.
+
+
 <hr>
+<br>
+
 
 4. Explica cada uno de los siguientes conceptos e indica la relación entre ellos.
  
- - código fuente
- - código objeto
- - código binario
+- Código fuente: Código del programa legible escrito en un lenguaje de programación.
+
+
+- Código objeto: Código que se obtiene al compilar el código fuente, no se puede leer ni modificar por las personas.
+
+
+- Código binario: Código que utiliza la computadora para entender y ejecutar el programa, solo se usan dos dígitos: 0 y 1.
+
 <hr>
+<br>
+
 
 5. ¿Qué tipo de código es el `bytecode` generado por el compilador de Java?
-<hr>
-
+<br>
 
 <pre>
     
-    
+    El bytecode es un código que no depende de ningún idioma ni de ningún país, sino que es universal, que para descifrarlo se usa la máquina virtual de java, que interpreta el bytecode y lo ejecuta en su sistema.
+
 </pre>
-    
+
+<hr>
+<br>
+
 
 # [Herramientas de desarrollo](#indice) 
 
@@ -65,28 +93,53 @@
 
  Instrucciones en https://github.com/jamj2000/HolaMundo.
 <hr>
- 
+ <br>
 2. Para cada uno de los lenguajes anteriores, indica el proceso realizado para conseguir ejecutar el código: ¿compilación o interpretación?
+   
+- Bash: Es un lenguaje interpretado12.
+- Python: Es tanto un lenguaje compilado como interpretado
+- PHP: Es un lenguaje interpretado
+- JavaScript (Node.js): Es un lenguaje interpretado
+- C: Es un lenguaje compilado
+- C++: Es un lenguaje compilado
+- Java: Es tanto un lenguaje compilado como interpretado
+- Ruby: Es tanto un lenguaje compilado como interpretado
+- Go: Es un lenguaje compilado
+- Rust: Es un lenguaje compilado
+- Ensamblador (NASM): Es un lenguaje compilado.
+  
 <hr>
+<br>
 
 3. Para cada uno de los lenguajes anteriores, indica el nombre del compilador o interprete utilizado en GNU/Linux.
+
+- C: GCC (GNU Compiler Collection)12
+- C++: GCC (GNU Compiler Collection)12
+- Java: OpenJDK3
+- Ada: GNAT (GNU NYU Ada Translator)4
+- Objective-C: GCC (GNU Compiler Collection)15
+- Objective-C++: GCC (GNU Compiler Collection)15
+- Fortran: GFortran67
 <hr>
+<br>
 
 4. Investiga y averigua que extensión tienen los archivos de código fuente de los siguientes lenguajes:
 
-  - bash
-  - python
-  - php
-  - javascript
-  - c
-  - c++
-  - java
-  - ensamblador
-  - ruby
-  - go
-  - rust
-  - lisp
+  - bash: .sh
+  - python: .py
+  - php: .php
+  - javascript: .js
+  - c: .c
+  - c++: .cc o .C
+  - java: .java
+  - ensamblador: .s
+  - ruby: .rb, .rjs
+  - go: .go
+  - rust: .rs
+  - lisp: .lisp, .cl, .ss o .rkt
+  
 <hr>
+<br>
 
 5. Scripts ejecutables para los lenguajes interpretados. Edita los scripts para los siguientes lenguajes:
 
@@ -102,178 +155,116 @@
 
   Instrucciones en https://github.com/jamj2000/HolaMundo.
 <hr>
+<br>
 
 6. ¿Qué extensión tienen los archivos de código objeto?
+
+- Windows:
+
+.obj
+
+Ejemplo: archivo.obj
+
+- Unix/Linux:
+
+.o
+
+Ejemplo: archivo.o
+
+- Mac OS:
+
+.o
+
+Ejemplo: archivo.o
+
+<hr>
+<br>
+
+7.   Bibliotecas. Define que se entiende por biblioteca o librería y los tipos que existen.
+
+    Una biblioteca es un conjunto de funciones, clases y métodos que se pueden utilizar para desarrollar software. Las bibliotecas se utilizan para reutilizar el código existente y para ahorrar tiempo
+
+Existen diferentes tipos de bibliotecas y librerías, cada una con objetivos y usuarios específicos. 
+<hr>
+<br>
+12.   Bibliotecas. ¿Qué tipo es el más utilizado actualmente? ¿Por qué?
+
+
+    En programación, no hay un tipo de biblioteca o librería que sea el más utilizado actualmente. El uso de bibliotecas y librerías depende del lenguaje de programación
 <hr>
 
-7. Lenguaje C. Código en varios archivos. Obtener el código objeto a partir del código fuente de los 3 archivos siguientes:
-
- ```c 
- //-------------
- // datos.c
- //-------------
-
- char *mensaje="Hola a todos y todas";
- int  num1 = 8;
- int  num2 = 10;
- ```
-
- ```c
- //-------------
- // suma.c
- //-------------
-
- int suma (int a, int b) {
-     return a + b;
- }
- ```
-
- ```c 
- //-------------
- // main.c
- //-------------
-
- #include <stdio.h>
-
- int suma (int a, int b);
-
- extern char *mensaje;
- extern int  num1, num2;
-
- int main(){
-     printf("%s\n", mensaje);
-     printf("%d\n", suma (num1, num2) );
-     return 0;
- }
- ```
-
- ```bash
- # Para obtener código objeto
-
- gcc  -c  main.c  datos.c  suma.c 
- ```
-
- Deberemos obtener 3 archivos:  `main.o`,  `suma.o`  y `datos.o`
-<hr>
-
-8. Lenguaje C. Código en varios archivos. Obtener el código binario ejecutable a partir del código objeto de los 3 archivos anteriores:
-
- ```bash
- # Para obtener código binario
-
- gcc  -o  programa  main.o  datos.o  suma.o 
- ```
-
- Deberememos obtener un archivo `programa` binario ejecutable. Si lo ejecutamos obtenemos el siguiente resultado:
-
- ```
- ./programa
- Hola a todos y todas
- 18
- ```
-<hr>
-
-9. Lenguaje C++. Código en varios archivos. Obtener el código objeto a partir del código fuente de los 3 archivos siguientes:
-
- ```cpp
- //-------------
- // datos.cpp
- //-------------
- # include <string>
-
- std::string mensaje = "Hola a todos y todas";
-
- int  num1 = 8;
- int  num2 = 10;
- ```
-
- ```cpp
- //-------------
- // main.cpp
- //-------------
- #include <iostream>
-
- using namespace std;
-
- int suma (int a, int b);
-
- extern string mensaje;
- extern int  num1, num2;
-
- int main(){
-     cout << mensaje << endl;
-     cout << suma (num1, num2) << endl;
-     return 0;
- }
- ``` 
-
- ```cpp
- //-------------
- // suma.cpp
- //-------------
- int suma (int a, int b) {
-     return a + b;
- }
- ```
- 
- ```bash
- # Para obtener código objeto
-
- g++  -c  main.cpp  datos.cpp  suma.cpp 
- ```
-
- Deberemos obtener 3 archivos:  `main.o`,  `suma.o`  y `datos.o`
-<hr>
-
-10. Lenguaje C++. Código en varios archivos. Obtener el código binario ejecutable a partir del código objeto de los 3 archivos anteriores:
-
- ```bash
- # Para obtener código binario
-
- g++  -o  programa  main.o  datos.o  suma.o 
- ```
-
- Deberememos obtener un archivo `programa` binario ejecutable. Si lo ejecutamos obtenemos el siguiente resultado:
-
- ```
- ./programa
- Hola a todos y todas
- 18
- ```
-<hr>
-
-11. Bibliotecas. Define que se entiende por biblioteca o librería y los tipos que existen.
-<hr>
-
-12. Bibliotecas. ¿Qué tipo es el más utilizado actualmente? ¿Por qué?
-
-  Más información en https://github.com/jamj2000/Bibliotecas
-<hr>
-
-13. Bibliotecas. Crea una biblioteca dinámica en C que proporcione las funciones para sumar, restar, multiplicar y dividir 2 números enteros.
+14.  Bibliotecas. Crea una biblioteca dinámica en Java que proporcione las funciones para sumar, restar, multiplicar y dividir 2 números enteros.
 Crea un programa que haga uso de ella y comprueba que se ejecuta correctamente.
 
   Instrucciones en https://github.com/jamj2000/Bibliotecas
 <hr>
 
-14. Bibliotecas. Crea una biblioteca dinámica en Java que proporcione las funciones para sumar, restar, multiplicar y dividir 2 números enteros.
-Crea un programa que haga uso de ella y comprueba que se ejecuta correctamente.
+Aqui la biblioteca:
 
-  Instrucciones en https://github.com/jamj2000/Bibliotecas
-<hr>
+public class Biblioteca {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static int subtract(int a, int b) {
+        return a - b;
+    }
+
+    public static int multiply(int a, int b) {
+        return a * b;
+    }
+
+    public static int divide(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Cannot divide by zero!");
+        }
+        return a / b;
+    }
+}
+
+Aqui el main:
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 5;
+
+        System.out.println("a + b = " + MathLibrary.add(a, b));
+        System.out.println("a - b = " + MathLibrary.subtract(a, b));
+        System.out.println("a * b = " + MathLibrary.multiply(a, b));
+        System.out.println("a / b = " + MathLibrary.divide(a, b));
+    }
+}
 
 15. Bibliotecas. Busca información y explica las ventajas y desventajas de usar bibliotecas estáticas.
+
+- Ventajas:
+
+Las bibliotecas estáticas resisten la vulnerabilidad porque viven dentro del archivo ejecutable.
+La velocidad en tiempo de ejecución se produce más rápido porque su código objeto (binario) está en el archivo ejecutable.
+
+- Desventajas:
+
+Los cambios realizados en los archivos y el programa requieren volver a enlazar y recompilar.
+El tamaño del archivo es mucho mayor.
+
 <hr>
 
-16. Bibliotecas. Busca información y explica las ventajas y desventajas de usar bibliotecas dinámicas.
+16.  Bibliotecas. Busca información y explica las ventajas y desventajas de usar bibliotecas dinámicas.
+
+- Ventajas:
+
+Solo necesita una copia en tiempo de ejecución.
+Varias aplicaciones en ejecución utilizan la misma biblioteca sin necesidad de que cada archivo tenga su propia copia.
+Contienen archivos más pequeños.
+Las bibliotecas dinámicas están vinculadas en tiempo de ejecución.
+
+- Desventajas:
+
+¿Qué pasa si la biblioteca dinámica se daña?
 <hr>
 
-17. Build. Automatiza el proceso de compilación de ejecutable y biblioteca, su enlazado y la generación del archivo ejecutable para código fuente en C con make. Haz uso de un buildfile.    
-
-  Instrucciones en https://github.com/jamj2000/Bibliotecas/blob/master/Build.md 
-<hr>
-
-18. Build. Automatiza el proceso de compilación de ejecutable y biblioteca, su enlazado y la generación del archivo .jar para código fuente en Java con Ant. Haz uso de un buildfile.    
+18.   Build. Automatiza el proceso de compilación de ejecutable y biblioteca, su enlazado y la generación del archivo .jar para código fuente en Java con Ant. Haz uso de un buildfile.    
 
   Instrucciones en https://github.com/jamj2000/Bibliotecas/blob/master/Build.md 
 <hr>
@@ -282,73 +273,4 @@ Crea un programa que haga uso de ella y comprueba que se ejecuta correctamente.
 
   Instrucciones en https://github.com/jamj2000/Bibliotecas/blob/master/Maven.md 
 <hr>
- 
-20. Build. Automatiza el proceso de compilación de ejecutable y biblioteca, su enlazado y la generación del archivo .jar para código fuente en Java con Gradle. Haz uso de un buildfile.    
 
-  Instrucciones en https://github.com/jamj2000/Bibliotecas/blob/master/Gradle.md 
-<hr>
- 
-21. CMake. Automatiza el proceso de compilación de ejecutable y bibliotecas, su enlazado y la generación del archivo ejecutable para código fuente en C++. Crea un buildfile con CMake.   
-
-  Instrucciones en https://github.com/jamj2000/Bibliotecas/blob/master/CMake.md
-<hr>
-
-<pre>
-
- 
-</pre>
-
-# [Entornos integrados de desarrollo](#indice) 
-
-1. Instala el editor sublime text. Saca una captura de pantalla una vez instalado.
-<hr>
-
-2. Personaliza Sublime text instalando los complementos más importantes. 
-
-  Consulta la página https://www.genbetadev.com/desarrollo-web/10-packages-de-sublimetext-para-desarrolladores-web
-<hr>
-
-3. ¿Para que sirve el complemento __Emmet__? Haz uso de él al escribir un archivo html de prueba.
-<hr>
-
-4. Instala el editor Visual Studio Code. Saca una captura de pantalla una vez instalado y funcionando.
-<hr>
- 
-5. Haz una comparativa de la funcionalidad ofrecida por Sublime text y la ofrecida por Visual Studio Code referente a los siguientes aspectos:
-
-  - terminal integrado
-  - emmet incorporado
-  - iconos para los tipos de archivos
-  - atajo de teclas para comentar (Ctrl+Shift+7)
-  - atajo de teclas para buscar y seleccionar (Ctrl+D)
-<hr>
-
-6. ¿Qué paquetes básicos debemos instalar en Ubuntu para desarrollar en Java?
-<hr>
- 
-7. Instala el entorno integrado Netbeans. Saca una captura de pantalla una vez instalado y funcionando. 
-<hr>
-
-8. Instala el entorno integrado Eclipse. Saca una captura de pantalla una vez instalado y funcionando. 
-<hr>
-
-9. Crea un proyecto en Java en Netbeans. Realiza su compilación y ejecución.
-<hr>
-
-10. ¿Qué sistema de construcción utiliza Netbeans para generar los archivos "ejecutables"? Mira en el directorio raíz del proyecto
-y examina qué _buildfile_ utiliza de los vistos en el tema.
-<hr>
-
-11. Crea un proyecto en Java en Eclipse. Realiza su compilación y ejecución.
-<hr>
-
-12. ¿Qué sistema de construcción utiliza Eclipse para generar los archivos "ejecutables"? Mira en el directorio raíz del proyecto
-y examina qué _buildfile_ utiliza de los vistos en el tema.
-<hr> 
-
-
- 
-<pre>
-
-
-</pre>
